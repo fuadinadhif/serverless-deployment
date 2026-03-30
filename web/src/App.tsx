@@ -8,7 +8,7 @@ export default function App() {
   useEffect(() => {
     async function getEvents() {
       const response = await fetch(
-        "https://api-serverless-deployment.vercel.app/api/events",
+        `${import.meta.env.VITE_API_DOMAIN}/api/events`,
       );
       const data = await response.json();
       setEvents(data.data);
@@ -20,7 +20,7 @@ export default function App() {
   return (
     <main>
       <h1>Welcome to Eventiyf!</h1>
-      {events && events.map(({ title }) => <li>{title}</li>)}
+      {events && events.map(({ title, id }) => <li key={id}>{title}</li>)}
     </main>
   );
 }
