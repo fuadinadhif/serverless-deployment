@@ -4,7 +4,7 @@ import cors from "cors";
 const app = express();
 const PORT = 8000;
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "https://api-serverless-deployment.vercel.app" }));
 
 app.get("/api/status", (req, res) => {
   res

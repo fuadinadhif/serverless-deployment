@@ -7,7 +7,9 @@ export default function App() {
 
   useEffect(() => {
     async function getEvents() {
-      const response = await fetch("http://localhost:8000/api/events");
+      const response = await fetch(
+        "https://api-serverless-deployment.vercel.app/api/events",
+      );
       const data = await response.json();
       setEvents(data.data);
     }
